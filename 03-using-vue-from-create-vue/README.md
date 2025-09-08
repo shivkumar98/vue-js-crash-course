@@ -77,3 +77,15 @@
 * Now if I navigate to `localhost:3030`, I see the following page showing that I've successfully created and built the project:
 
    <img src="screenshots/2025-09-08-12-42-51.png" width="300px">
+
+## 🟥 3.2 
+### 🔴 Clearing up Project
+* I want to modify the example project and get to a clean state, I take a copy of the folder and call it [shiv-vue-crash-2025](./shiv-vue-crash-2025/)
+* I delete everything from the components folder
+* I clear all the content from `App.vue` so that it only has the following content:
+```js
+<template>
+  <h1>Vue Jobs</h1>
+</template>
+```
+* 
