@@ -139,3 +139,23 @@ return {
 ```
 * And the page lists out the tasks:
 ![](screenshots/2025-09-09-08-36-43.png)
+
+
+### 🔴 v-bind Directive
+* Suppose I want to add a link for going to google
+* First I'll add the google link to my data:
+* 
+
+* While we COULD do this:
+```js
+<a href="https://www.google.com/">Click for Google</a>
+```
+* We use `v-bind` so that the `href` attribute's value is dynamic rather than be stuck at `https://www.google.com/`:
+```js
+<a v-bind:href="link">Click for Google</a>
+```
+* There is a shorthand for this:
+```js
+<a :href="link">Click for Google</a>
+```
+* The colon declares the link is not just `link` but dynamically set to what the `link` variable is in our data 💡
