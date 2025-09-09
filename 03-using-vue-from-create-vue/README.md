@@ -78,7 +78,7 @@
 
    <img src="screenshots/2025-09-08-12-42-51.png" width="300px">
 
-## 🟥 3.2 
+## 🟥 3.2 Using Directives via Options/Composition
 ### 🔴 Clearing up Project
 * I want to modify the example project and get to a clean state, I take a copy of the folder and call it [shiv-vue-crash-2025](./shiv-vue-crash-2025/)
 * I delete everything from the components folder
@@ -88,4 +88,54 @@
   <h1>Vue Jobs</h1>
 </template>
 ```
-* 
+### 🔴 Basic Directives
+* With Options API, I need to `export default`
+* I start defining the module within a script tag:
+```js
+<script>
+export default {
+   data() {
+      return {
+         name: "Shiv Kumar",
+         status: false
+      }
+   },
+}
+</script>
+<template>
+  <h1>Vue Jobs</h1>
+</template>
+```
+
+* I now update the template to display the information using conditional **directives**:
+```js
+<template>
+  <h1>{{name}}</h1>
+  <p v-if="status === 'active'">User is Active</p>
+  <p v-else-if="status === 'pending'">User is Pending</p>
+  <p v-else>User is Inactive</p>
+</template>
+```
+* Now when I run the app, I see the following:
+![](screenshots/2025-09-09-08-22-25.png)
+
+<br>
+
+* There also is a directive for looping through an array.
+* Suppose I wish to bullet point out tasks for an employee
+* I first update the data so that it contains the task:
+```js
+return {
+   name: "Shiv Kumar",
+   status: false,
+   tasks: ['Destroy all humans', 'Kill Flanders', 'Learn Vue']
+}
+```
+* And then I update render using the `v-for` directive:
+```js
+<ul>
+   <li v-for="task in tasks">{{task}}</li>
+</ul>
+```
+* And the page lists out the tasks:
+![](screenshots/2025-09-09-08-36-43.png)

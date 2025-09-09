@@ -1,3 +1,23 @@
+<script>
+  export default {
+    data() {
+      return {
+        name: "Shiv Kumar",
+        status: false,
+        tasks: ['Destroy all humans', 'Kill Flanders', 'Learn Vue']
+      }
+    },
+  }
+</script>
 <template>
-  <h1>Vue Jobs</h1>
+  <h1>{{name}}</h1>
+  <p v-if="status === 'active'">User is Active</p>
+  <p v-else-if="status === 'pending'">User is Pending</p>
+  <p v-else>User is Inactive</p>
+
+  <h2>Tasks:</h2>
+  <ul >
+    <li v-for="task in tasks">{{task}}</li>
+  </ul>
+    
 </template>
